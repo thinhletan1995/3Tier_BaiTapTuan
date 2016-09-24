@@ -41,7 +41,7 @@ namespace PresentationTier
             string strMasp = "";
             if ((strMasp = dataGridView1.CurrentRow.Cells[0].Value.ToString()) != "")
             {
-                SanPham sp = objSP.GetSanPhamByMASP(strMasp);
+                SanPham sp = objSP.GetSanPhamByMASP(strMasp); 
 
                 txtMaSP.Text = sp.MaSanPham;
                 txtTenSp.Text = sp.TenSanPham;
