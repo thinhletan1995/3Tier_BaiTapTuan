@@ -2,7 +2,7 @@
 
 namespace BusinessLogicTier
 {
-    class SanPhamBUS
+    public class SanPhamBUS
     {
         
     }
