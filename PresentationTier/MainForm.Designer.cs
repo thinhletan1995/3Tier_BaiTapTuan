@@ -67,11 +67,6 @@
             // lstDanhMuc
             // 
             this.lstDanhMuc.FormattingEnabled = true;
-            this.lstDanhMuc.Items.AddRange(new object[] {
-            "Sách",
-            "Điện thoại",
-            "Quần áo",
-            "Trang sức"});
             this.lstDanhMuc.Location = new System.Drawing.Point(12, 12);
             this.lstDanhMuc.Name = "lstDanhMuc";
             this.lstDanhMuc.Size = new System.Drawing.Size(575, 251);

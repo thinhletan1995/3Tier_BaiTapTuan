@@ -31,7 +31,7 @@ namespace PresentationTier
 
             cboDanhMuc.DataSource = objDM.GetDanhMuc();
             cboDanhMuc.DisplayMember = "TenDM";
-            cboDanhMuc.ValueMember = "MaDN";
+            cboDanhMuc.ValueMember = "MaDM";
 
             cboDanhMuc.SelectedIndex = -1;
         }

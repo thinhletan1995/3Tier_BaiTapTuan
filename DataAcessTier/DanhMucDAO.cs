@@ -26,7 +26,6 @@ namespace DataAcessTier
             {
                 conn.Close();
                 return false;
-                throw;
             }
         }
 
@@ -36,7 +35,7 @@ namespace DataAcessTier
             {
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT FROM tbDanhMuc ORDER BY MaDM ASC", conn);
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM tbDanhMuc ORDER BY MaDM ASC", conn);
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
