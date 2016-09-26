@@ -36,8 +36,8 @@ namespace DataAcessTier
             {
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT * FROM tbSanPham WHERE madm = @madm ORDER BY MaSP ASC", conn);
-                cmd.Parameters.Add("@madm", OleDbType.BSTR).Value = strSP;
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM tbSanPham WHERE masp = @masp ORDER BY MaSP ASC", conn);
+                cmd.Parameters.Add("@masp", OleDbType.BSTR).Value = strSP;
 
                 OleDbDataReader rd = cmd.ExecuteReader();
 
