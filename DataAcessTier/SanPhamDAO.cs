@@ -113,6 +113,31 @@ namespace DataAcessTier
                 return false;
             }
         }
+        public bool UpdateSanPham(SanPham sp, string strSP)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                //OleDbCommand cmd = new OleDbCommand("UPDATE tbSANPHAM SET MASP = @masp, TENSP = '1', SOLUONG = 1, DONGIA = 1, XUATXU = '1', MADM = 'dm03' WHERE MASP = '@maspi'", conn);
+                OleDbCommand cmd = new OleDbCommand("UPDATE tbSANPHAM SET MASP = @masp, TENSP = @tensp, SOLUONG = @soluong, DONGIA = @dongia, XUATXU = @xuatxu, MADM = @madm WHERE MASP = @maspud", conn);
+                cmd.Parameters.Add("@masp", OleDbType.BSTR).Value = sp.MaSanPham;
+                cmd.Parameters.Add("@tensp", OleDbType.BSTR).Value = sp.TenSanPham;
+                cmd.Parameters.Add("@soluong", OleDbType.BSTR).Value = sp.SoLuong;
+                cmd.Parameters.Add("@dongia", OleDbType.BSTR).Value = sp.DonGia;
+                cmd.Parameters.Add("@xuatxu", OleDbType.BSTR).Value = sp.XuatXu;
+                cmd.Parameters.Add("@madm", OleDbType.BSTR).Value = sp.MaDanhMuc;
+                cmd.Parameters.Add("@maspud", OleDbType.BSTR).Value = strSP;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Console.WriteLine(ex);
+                return false;
+            }
+        }
     }
 
 
