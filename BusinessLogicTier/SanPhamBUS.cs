@@ -27,5 +27,9 @@ namespace BusinessLogicTier
         {
             return objSP.AddSanPham(sp);
         }
+        public bool UpdateSanPham(SanPham sp, string strSP)
+        {
+            return objSP.UpdateSanPham(sp, strSP);
+        }
     }
 }
